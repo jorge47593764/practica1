@@ -1,38 +1,61 @@
 package test60.test60;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+import org.junit.jupiter.api.Test;
+
+
+
+public class AppTest {
+
+
+
+    @Test
+
+    void casoCorrecto1() {
+
+        assertTrue(App.esPalindromo("radar"));
+
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+
+
+    @Test
+
+    void casoCorrecto2() {
+
+        assertFalse(App.esPalindromo("java"));
+
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+
+
+    @Test
+
+    void casoIncorrecto1() {
+
+        assertTrue(App.esPalindromo("Radar"));
+
     }
+
+
+
+    @Test
+
+    void casoIncorrecto2() {
+
+        assertTrue(App.esPalindromo("Dabale arroz a la zorra el abad"));
+
+    }
+
+
+
+    @Test
+
+    void casoLimite() {
+
+    	assertTrue(App.esPalindromo("")); // o assertFalse según corresponda
+
+    }
+
 }
